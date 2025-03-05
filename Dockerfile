@@ -1,29 +1,14 @@
-# Use an official Node.js image as a base
-FROM node:18-alpine AS build
+FROM node:18
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+#RUN npm cache clean --force && npm install
+#RUN ls -la node_modules/monaco-editor/min/vs # Check if it exists
+#Interactive debug command.
+RUN /bin/bash #add this line, then build the image.
 
-# Copy the entire project
 COPY . .
 
-# Build the React app
-RUN npm run build
-
-# Use Nginx to serve the build files
-FROM nginx:alpine
-
-# Copy build files to Nginx directory
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose the port Nginx runs on
-EXPOSE 8000
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
