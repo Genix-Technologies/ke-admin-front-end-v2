@@ -40,7 +40,7 @@ export default defineConfig({
       target: 'http://ec2-44-212-5-246.compute-1.amazonaws.com/',
       // target: 'http://127.0.0.1:9380/',
       changeOrigin: true,
-      ws: true,
+      ws: true, 
       logger: console,
       // pathRewrite: { '^/v1': '/v1' },
     },
