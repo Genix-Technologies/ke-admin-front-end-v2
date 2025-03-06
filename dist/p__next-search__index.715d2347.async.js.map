@@ -1,0 +1,1 @@
+{"version":3,"file":"p__next-search__index.715d2347.async.js","mappings":"uJAAe,SAASA,IACtB,OAAOC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,UACd,C","sources":["webpack:///./src/pages/next-search/index.tsx"],"sourcesContent":["export default function Search() {\n  return <div>Search</div>;\n}\n"],"names":["Search","_jsx","children"],"sourceRoot":""}

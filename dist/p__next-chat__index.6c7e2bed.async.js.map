@@ -1,0 +1,1 @@
+{"version":3,"file":"p__next-chat__index.6c7e2bed.async.js","mappings":"uJAAe,SAASA,IACtB,OAAOC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,QACd,C","sources":["webpack:///./src/pages/next-chat/index.tsx"],"sourcesContent":["export default function Chat() {\n  return <div>chat</div>;\n}\n"],"names":["Chat","_jsx","children"],"sourceRoot":""}

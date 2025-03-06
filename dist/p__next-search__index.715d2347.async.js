@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[7193],{89922:function(n,e,u){u.r(e),u.d(e,{default:function(){return c}});var r=u(86074);function c(){return(0,r.jsx)("div",{children:"Search"})}}}]);
+//# sourceMappingURL=p__next-search__index.715d2347.async.js.map

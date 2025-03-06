@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5227],{38807:function(n,e,u){u.r(e),u.d(e,{default:function(){return r}});var t=u(86074);function r(){return(0,t.jsx)("div",{children:"Agent"})}}}]);
+//# sourceMappingURL=p__agent__index.769455b9.async.js.map

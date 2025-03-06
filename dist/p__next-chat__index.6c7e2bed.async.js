@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[3646],{66449:function(n,u,e){e.r(u),e.d(u,{default:function(){return c}});var t=e(86074);function c(){return(0,t.jsx)("div",{children:"chat"})}}}]);
+//# sourceMappingURL=p__next-chat__index.6c7e2bed.async.js.map
