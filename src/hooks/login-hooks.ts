@@ -27,11 +27,20 @@ export const useLogin = () => {
   } = useMutation({
     mutationKey: ['login'],
     mutationFn: async (params: { email: string; password: string }) => {
+      
       const { data: res = {}, response } = await userService.login(params);
+      
+      alert(JSON.stringify(response));
+
       if (res.code === 0) {
         const { data } = res;
-        message.success(t('message.logged'));
+        
         const authorization = response.headers.get(Authorization);
+        if (!authorization) {
+          message.error('Invalid authentication header');
+          return;
+        }
+        message.success(t('message.logged'));
         const token = data.access_token;
         const userInfo = {
           avatar: data.avatar,

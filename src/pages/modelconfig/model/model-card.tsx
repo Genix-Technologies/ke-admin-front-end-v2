@@ -8,10 +8,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { SettingOutlined } from '@ant-design/icons';
-import { Key, MoreVertical, Plus, Trash2 } from 'lucide-react';
+import { Key, MoreVertical,TicketCheck, Plus, Trash2 } from 'lucide-react';
 import { PropsWithChildren, useCallback, useMemo } from 'react';
 import ApiKeyModal from '../mconfig-setting/setting-model/api-key-modal';
-import { useSelectLlmList } from '@/hooks/llm-hooks';
+import { useSelectLlmList, useFetchConfiguredLlms } from '@/hooks/llm-hooks';
 import { useSubmitApiKey, useSubmitAzure, useSubmitGoogle, useSubmitOllama, useSubmitSystemModelSetting } from '../mconfig-setting/setting-model/hooks';
 import { useTranslate } from '@/hooks/common-hooks';
 import { useTheme } from '@/components/theme-provider';
@@ -20,6 +20,7 @@ import AzureOpenAIModal from '../mconfig-setting/setting-model/azure-openai-moda
 import GoogleModal from '../mconfig-setting/setting-model/google-modal';
 import OllamaModal from '../mconfig-setting/setting-model/ollama-modal';
 import SystemModelSettingModal from '../mconfig-setting/setting-model/system-model-setting-modal';
+import { Ticker } from 'rc-tween-one';
 
 const settings = [
   {
@@ -58,7 +59,7 @@ const settings = [
 
 const modelSettings = [
   {
-    title: 'Open AI',
+    title: 'OpenAI',
     description: '',
     isNew: false,
     model: 'OpenAI',
@@ -76,7 +77,7 @@ const modelSettings = [
     model: 'Ollama',
   },
   {
-    title: 'Azure OpenAI',
+    title: 'Azure-OpenAI',
     description: '',
     isNew: true,
     model: 'Azure-OpenAI',
@@ -89,8 +90,11 @@ function Title({ children }: PropsWithChildren) {
 
 export function SystemModelSetting() {
   const { factoryList, myLlmList: llmList, loading } = useSelectLlmList();
+  //const { factoryList, configuredLlmList: configuredLlmList, loading1 } = useFetchConfiguredLlms();
+  const {data:configuredLlmList, loading:configuredLLMLoading} = useFetchConfiguredLlms();
+  
   const { theme } = useTheme();
-
+  console.log(configuredLlmList);
     //new 
     const {
         saveApiKeyLoading,
@@ -164,7 +168,7 @@ export function SystemModelSetting() {
   const { t } = useTranslate('setting');
 
   return (<>
-    <Card>
+    {/*<Card>
       <CardContent className="p-4 space-y-6">
         {settings.map((x, idx) => (
           <div key={idx} className="flex items-center">
@@ -187,7 +191,7 @@ export function SystemModelSetting() {
           </div>
         ))}
       </CardContent>
-    </Card>
+    </Card>*/}
    
     <section className="mt-6">
       <h2 className="text-2xl font-semibold mb-3">Added model</h2>
@@ -196,7 +200,7 @@ export function SystemModelSetting() {
             <Card className="pt-4">
             <CardContent className="space-y-4">
               <div className="flex justify-between space-y-4">
-              </div>
+              </div>  
               <Title>{x.title}</Title>
               <p></p>
               {/*<Card>
@@ -213,11 +217,22 @@ export function SystemModelSetting() {
                 {/*<Button variant="secondary" size="icon">
                   <MoreVertical className="h-4 w-4" />
                 </Button>*/}
-                <Button variant={'tertiary'} 
+                {configuredLLMLoading?"":configuredLlmList[x.title]["api_key"]==="Avaialble"?
+               
+               <Button variant={'outline'} 
                   onClick={() => handleAddModel(x.model)}
                  > 
-                <SettingOutlined /> API
+                 
+                <SettingOutlined /> Update API
                 </Button>
+                :<Button variant={'tertiary'} 
+                onClick={() => handleAddModel(x.model)}
+               > 
+               
+              <SettingOutlined /> API
+              </Button>}
+                
+                
               </div>
             </CardContent>
           </Card>

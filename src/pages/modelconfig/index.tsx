@@ -1,14 +1,14 @@
-import { useInfiniteFetchKnowledgeList } from '@/hooks/knowledge-hooks';
-import { useFetchUserInfo } from '@/hooks/user-setting-hooks';
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
+//import { useInfiniteFetchKnowledgeList } from '@/hooks/knowledge-hooks';
+//import { useFetchUserInfo } from '@/hooks/user-setting-hooks';
+//import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import {
-  Button,
+  /*Button,
   Divider,
   Empty,
-  Flex,
   Input,
   Skeleton,
-  Space,
+  Space,*/
+  Flex,
   Spin,
 } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,7 @@ import styles from './index.less';
 
 
 import {
-  AddModelCard,
+  //AddModelCard,
   ModelLibraryCard,
   SystemModelSetting,
 } from './model/model-card';
@@ -58,11 +58,11 @@ export default function modelconfig() {
               <SystemModelSetting/>
             </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-4">
+          {/*<div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-4">
             {modelLibraryList.map((x, idx) => (
               <ModelLibraryCard key={idx}></ModelLibraryCard>
             ))}
-          </div>
+          </div>*/}
           
         </section>
      

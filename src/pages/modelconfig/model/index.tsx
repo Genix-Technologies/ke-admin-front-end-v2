@@ -9,7 +9,7 @@ import {
 
 const modelLibraryList = [
   {
-    name: 'Open AI',
+    name: 'OpenAI',
     ogo:'',
     tags: 'TEXT EMBEDDING, TEXT RE-RANK',
     api_key: 'OpenAI',

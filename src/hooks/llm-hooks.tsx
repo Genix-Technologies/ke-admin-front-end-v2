@@ -4,6 +4,7 @@ import { ResponseGetType } from '@/interfaces/database/base';
 import {
   IFactory,
   IMyLlmValue,
+  IConfiguredLlmValue,
   IThirdOAIModelCollection as IThirdAiModelCollection,
   IThirdOAIModelCollection,
 } from '@/interfaces/database/llm';
@@ -157,6 +158,24 @@ export const useFetchMyLlmList = (): ResponseGetType<
     gcTime: 0,
     queryFn: async () => {
       const { data } = await userService.my_llm();
+
+      return data?.data ?? {};
+    },
+  });
+
+  return { data, loading };
+};
+
+
+export const useFetchConfiguredLlms = (): ResponseGetType<
+  Record<string, IConfiguredLlmValue>
+> => {
+  const { data, isFetching: loading } = useQuery({
+    queryKey: ['configuredLlmList'],
+    initialData: {},
+    gcTime: 0,
+    queryFn: async () => {
+      const { data } = await userService.configured_llm_list();
 
       return data?.data ?? {};
     },

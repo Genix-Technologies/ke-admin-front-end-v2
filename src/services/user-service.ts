@@ -12,6 +12,7 @@ const {
   factories_list,
   llm_list,
   my_llm,
+  configured_llms,
   set_api_key,
   set_tenant_info,
   add_llm,
@@ -63,6 +64,10 @@ const methods = {
   },
   my_llm: {
     url: my_llm,
+    method: 'get',
+  },
+  configured_llm_list: {
+    url: configured_llms,
     method: 'get',
   },
   set_api_key: {

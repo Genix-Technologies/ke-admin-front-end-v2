@@ -8,7 +8,7 @@ const Home = () => {
       <section>
         <Banner></Banner>
          <Datasets></Datasets>
-       {/* <Applications></Applications>*/}
+       {/*<Applications></Applications>*/}
       </section>
     </div>
   );

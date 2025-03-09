@@ -29,6 +29,18 @@ export interface IFactory {
 export interface IMyLlmValue {
   llm: Llm[];
   tags: string;
+  api_key:string;
+  api_base:string;
+}
+
+export interface IConfiguredLlmValue {
+  llm: ConfLLM[];
+  tags: string;
+}
+export interface ConfLLM {
+  name: string;
+  type: string;
+  used_token: number;
 }
 
 export interface Llm {

@@ -5,14 +5,11 @@ import { Segmented, SegmentedValue } from '@/components/ui/segmented';
 import { useTranslate } from '@/hooks/common-hooks';
 import { useNavigateWithFromState } from '@/hooks/route-hook';
 import {
-  ChevronDown,
+  //ChevronDown,
   Cpu,
-  Github,
   Library,
   MessageSquareText,
   Search,
-  Star,
-  Zap,
 } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { useLocation } from 'umi';

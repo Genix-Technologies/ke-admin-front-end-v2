@@ -13,7 +13,7 @@ export function Datasets() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-6">Documents</h2>
+      <h2 className="text-2xl font-bold mb-6">KB's</h2>
       <div className="flex gap-6">
         {loading ? (
           <div className="flex-1">
@@ -28,7 +28,7 @@ export function Datasets() {
               >
                 <CardContent className="p-4">
                   <div className="flex justify-between mb-4">
-                    {dataset.avatar ? (
+                    {/*dataset.avatar ? (
                       <div
                         className="w-[70px] h-[70px] rounded-xl bg-cover"
                         style={{ backgroundImage: `url(${dataset.avatar})` }}
@@ -38,10 +38,10 @@ export function Datasets() {
                         <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback>CN</AvatarFallback>
                       </Avatar>
-                    )}
-                    <Button variant="ghost" size="icon">
+                    )*/}
+                    {/*<Button variant="ghost" size="icon">
                       <Trash2 />
-                    </Button>
+                    </Button>*/}
                   </div>
                   <div className="flex justify-between items-end">
                     <div>
@@ -58,7 +58,7 @@ export function Datasets() {
                     <Button
                       variant="icon"
                       size="icon"
-                      onClick={navigateToDataset}
+                     /* onClick={navigateToDataset}*/
                     >
                       <ChevronRight className="h-6 w-6" />
                     </Button>
@@ -71,7 +71,7 @@ export function Datasets() {
         <Button
           className="h-auto "
           variant={'tertiary'}
-          onClick={navigateToDatasetList}
+          /*onClick={navigateToDatasetList}*/
         >
           See all
         </Button>

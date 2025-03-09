@@ -1,5 +1,5 @@
-let api_host = `http://ec2-44-212-5-246.compute-1.amazonaws.com/v1`; //"http://localhost:9380/v1"; //http://ec2-44-212-5-246.compute-1.amazonaws.com
-
+//let api_host = `http://127.0.0.1:9380/v1`;
+let api_host = "http://ec2-44-212-5-246.compute-1.amazonaws.com:9380/v1"; 
 export { api_host }; 
 
 export default {
@@ -25,6 +25,7 @@ export default {
   factories_list: `${api_host}/llm/factories`,
   llm_list: `${api_host}/llm/list`,
   my_llm: `${api_host}/llm/my_llms`,
+  configured_llms: `${api_host}/llm/configured_llms`,
   set_api_key: `${api_host}/llm/set_api_key`,
   add_llm: `${api_host}/llm/add_llm`,
   delete_llm: `${api_host}/llm/delete_llm`,
